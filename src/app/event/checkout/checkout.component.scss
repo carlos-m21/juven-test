@@ -1,0 +1,43 @@
+mdb-card-title {
+  display: flex;
+  font-weight: bold;
+  i.fas {
+    margin: 7px 10px;
+    font-size: 10px;
+  }
+}
+
+.bottom-container {
+  .ticket {
+    margin-top: 10px;
+    p {
+      margin-bottom: unset;
+      &:first-child {
+        font-weight: bold;
+      }
+    }
+  }
+  .btn-container {
+    display: flex;
+    justify-content: flex-end;
+    button {
+      margin-left: 10px;
+    }
+  }
+}
+
+.modal-dialog.modal-dialog-centered {
+  .title > p {
+    font-weight: bold;
+  }
+  .body {
+    margin: 20px auto;
+    p {
+      margin-bottom: 5px;
+    }
+  }
+  .footer {
+    display: flex;
+    justify-content: flex-end;
+  }
+}

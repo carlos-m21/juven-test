@@ -1,0 +1,52 @@
+.info {
+  mdb-icon {
+    margin-right: 10px;
+  }
+}
+
+.share {
+  font-weight: bold;
+  margin: 30px auto;
+  img {
+    margin-right: 5px;
+  }
+}
+
+.ticket {
+  @mixin row-space-between() {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .first-row {
+    @include row-space-between();
+  }
+
+  .collapse-content {
+    li {
+      .type-container {
+        @include row-space-between();
+        span {
+          margin: auto 0px;
+        }
+        select {
+          font-size: 12px;
+          width: 70px;
+          border-radius: 16px;
+          height: 32px;
+        }
+      }
+      .checkout-container {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 20px;
+        > a {
+          margin: 0px;
+          -webkit-border-radius: 10em;
+          border-radius: 10em;
+          padding: 10px 30px;
+        }
+      }
+    }
+  }
+}

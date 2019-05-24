@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+p,
+h1 {
+  font-family: sans-serif !important;
+}
+
+button.btn {
+  margin: 0px;
+  border-radius: 10em;
+  padding: 8px 30px;
+}
+
+mdb-icon > i {
+  font-size: 20px;
+}
+
+.card-text {
+  color: unset !important;
+}

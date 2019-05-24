@@ -1,0 +1,24 @@
+<mdb-navbar SideClass="navbar">
+  <a routerLink="/">
+    <span> <img src="assets/images/juven-logo.svg" alt="logo" height="30" /> </span
+  ></a>
+</mdb-navbar>
+<main class="container">
+  <router-outlet></router-outlet>
+</main>
+
+<div mdbModal #basicModal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title w-100" id="myModalLabel">You still have pending ticket checkout.</h4>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close" (click)="gotoCheckout()" mdbWavesEffect>
+          Checkout
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

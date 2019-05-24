@@ -1,0 +1,78 @@
+<div *ngIf="event">
+  <mdb-card-img [src]="event.banner_url" alt="banner"></mdb-card-img>
+  <mdb-card-body>
+    <mdb-card-title>
+      <p class="text-muted">{{ event.name }}</p>
+      <i class="fas fa-greater-than"></i>
+      <p>Checkout</p>
+    </mdb-card-title>
+    <mdb-card-text>
+      <p>Confirm personal information</p>
+      <form (ngSubmit)="onConfirm(f)" #f="ngForm">
+        <div class="row">
+          <div class="col">
+            <div class="md-form">
+              <input mdbInput type="text" class="form-control" ngModel name="fname" required />
+              <label for="fname">First Name</label>
+            </div>
+          </div>
+          <div class="col">
+            <div class="md-form">
+              <input mdbInput type="text" class="form-control" ngModel name="lname" required />
+              <label for="lname">Last Name</label>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="md-form">
+              <input mdbInput type="email" class="form-control" ngModel name="email" email required />
+              <label for="email">Email</label>
+            </div>
+          </div>
+          <div class="col">
+            <div class="md-form">
+              <input mdbInput type="text" class="form-control" ngModel name="phone" required />
+              <label for="email">Phone Number</label>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <div class="bottom-container">
+          <div class="ticket" *ngFor="let type of ticket">
+            <p>{{ event.name + ' - ' + type.name }}</p>
+            <p>{{ event.date | date: 'd MMM y (EEE) h:mm a' }}</p>
+            <p>{{ type.count }}</p>
+          </div>
+          <div class="btn-container">
+            <button mdbBtn color="info" mdbWavesEffect (click)="onGoBack()">Back</button>
+            <button mdbBtn color="info" mdbWavesEffect type="submit" [disabled]="!f.valid">
+              Confirm
+            </button>
+          </div>
+        </div>
+      </form>
+    </mdb-card-text>
+  </mdb-card-body>
+
+  <div mdbModal #basicModal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal-success" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document" *ngIf="checkoutData">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="title">
+            <p>Checkout Successful</p>
+          </div>
+          <div class="body">
+            <p>Congratulations, you have successfully purchased your tickets!</p>
+            <p>
+              Your reference ID is <b>#{{ checkoutData?.id }}</b>
+            </p>
+          </div>
+          <div class="footer">
+            <button mdbBtn color="info" (click)="onGoBack()">Back to Event</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

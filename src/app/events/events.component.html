@@ -1,0 +1,37 @@
+<h5><b>Events</b></h5>
+
+<div class="row">
+  <div class="col-sm-4" *ngFor="let event of events">
+    <mdb-card [routerLink]="'/event' + event.url">
+      <div class="view rgba-white-slight waves-light" mdbWavesEffect>
+        <mdb-card-img [src]="event.banner_url" alt="Card image cap"></mdb-card-img>
+        <a>
+          <div class="mask"></div>
+        </a>
+      </div>
+      <mdb-card-body>
+        <mdb-card-title>
+          <h5>{{ event.name }}</h5>
+        </mdb-card-title>
+
+        <mdb-card-text> {{ event.date | date }} </mdb-card-text>
+      </mdb-card-body>
+    </mdb-card>
+  </div>
+</div>
+
+<div mdbModal #basicModal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title w-100" id="myModalLabel">Imported "seed-data.json" to database</h4>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close" (click)="closeModal()" mdbWavesEffect>
+          Checkout
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

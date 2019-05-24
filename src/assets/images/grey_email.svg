@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.1 (67048) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 12</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="16a.-Organization-Profile-01-(Ref02)" transform="translate(-1111.000000, -433.000000)">
+            <g id="Group-12" transform="translate(1111.000000, 433.000000)">
+                <path d="M15,0 C23.2842712,-1.52179594e-15 30,6.71572875 30,15 C30,23.2842712 23.2842712,30 15,30 C6.71572875,30 1.01453063e-15,23.2842712 0,15 C-1.01453063e-15,6.71572875 6.71572875,1.52179594e-15 15,0 Z M21.66625,8.33375 L8.3325,8.33375 C7.41538825,8.33788091 6.67430217,9.08287922 6.675,10 L6.66625,20 C6.66899566,20.9191048 7.41339523,21.6635043 8.3325,21.66625 L21.66625,21.66625 C22.5853548,21.6635043 23.3297543,20.9191048 23.3325,20 L23.3325,10 C23.3297543,9.08089523 22.5853548,8.33649566 21.66625,8.33375 Z M21.66625,11.6675 L15,15.83375 L8.3325,11.6675 L8.3325,10 L15,14.1675 L21.66625,10 L21.66625,11.6675 Z" id="Combined-Shape" fill="#7D909A" fill-rule="nonzero"></path>
+                <g id="Group-11" transform="translate(5.000000, 5.000000)">
+                    <polygon id="Path_687" points="0 0 20 0 20 20 0 20"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

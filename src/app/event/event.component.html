@@ -1,0 +1,72 @@
+<mdb-card *ngIf="event">
+  <mdb-card-img [src]="event.banner_url" alt="banner"></mdb-card-img>
+  <mdb-card-body>
+    <div *ngIf="event">
+      <mdb-card-title>
+        <p>
+          <b>{{ event.name }}</b>
+        </p>
+      </mdb-card-title>
+
+      <hr />
+      <mdb-card-text>
+        <div class="info">
+          <p>
+            <mdb-icon fas icon="calendar-alt"></mdb-icon>
+
+            {{ event.date | date: 'd MMM y (EEE) h:mm a' }}
+          </p>
+          <p>
+            <mdb-icon fas icon="map-marker-alt"></mdb-icon>
+            <span class="text-info"
+              ><b>{{ event.location }}</b></span
+            >
+          </p>
+        </div>
+        <div class="share">
+          <p>Share</p>
+          <div>
+            <img src="/assets/images/grey_facebook.svg" alt="fb-logo" />
+            <img src="/assets/images/grey_twitter.svg" alt="tw-logo" />
+            <img src="/assets/images/grey_email.svg" alt="email-logo" />
+            <img src="/assets/images/grey_whatsapp.svg" alt="sms-logo" />
+          </div>
+        </div>
+        <div class="ticket">
+          <div class="first-row">
+            <p><b>Tickets</b></p>
+            <a color="info" class="waves-light text-info" type="button" (click)="ticketCollapse.toggle()" mdbWavesEffect>
+              <b>Collapse</b>
+            </a>
+          </div>
+          <div class="collapse-content" mdbCollapse #ticketCollapse="bs-collapse">
+            <form (ngSubmit)="onCheckout(f)" #f="ngForm">
+              <ul class="list-group">
+                <li class="list-group-item" *ngFor="let type of event.ticket_types; let last = last">
+                  <div class="type-container">
+                    <span>{{ type.name }}</span>
+                    <select class="browser-default custom-select" [(ngModel)]="type.amountSelected" [name]="type.name">
+                      <option selected value="0">0</option>
+
+                      <option [value]="i" *ngFor="let i of createTicketRange(type.quantity_available)">{{ i }}</option>
+                    </select>
+                  </div>
+                  <div class="checkout-container" *ngIf="last">
+                    <button mdbBtn color="info" mdbWavesEffect type="submit" [disabled]="!isValidTicket()">
+                      Checkout
+                    </button>
+                  </div>
+                </li>
+              </ul>
+            </form>
+          </div>
+        </div>
+        <hr />
+        <div class="description">
+          <p class="h6">Description</p>
+          <p>{{ event.description }}</p>
+        </div>
+      </mdb-card-text>
+    </div>
+  </mdb-card-body>
+</mdb-card>
